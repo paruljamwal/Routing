@@ -1,0 +1,39 @@
+.cart{
+    padding: 10px 110px;
+    cursor: pointer;
+    background-color: lightgreen;
+    border: none;
+}
+
+.pic{
+    height: 350px;
+    cursor: zoom-out;
+}
+
+.cartbtn{
+    
+        width: 220px;
+        height:40px;
+        font-size: larger;
+        background-color: lightsalmon;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 15px;
+    
+}
+
+.details{
+    margin-top: 20px;
+    display: flex;
+    width: 70%;
+    gap: 10%;
+}
+
+.cartdetail{
+    margin-top: 60px;
+    padding: 20px;
+    width: 100%;
+    border: 2px rgb(246, 229, 227) solid;
+    height: 400px;
+}
+

@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+#light{
+  background-color: silver;
+  color: black;
+  height: 100vh;
+}
+#dark{
+  height: 100vh;
+background-color: black;
+color: silver;
+}

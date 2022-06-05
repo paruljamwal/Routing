@@ -4,12 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from './Context/AuthContext';
+import { CountProvider } from './Context/Counter';
+import { ThemeProvider } from './Context/ThemeContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ThemeProvider>
+    <CountProvider>
     <BrowserRouter>
-     <App />
+    <AuthProvider>
+       <App />
+    </AuthProvider>
     </BrowserRouter>
+    </CountProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
