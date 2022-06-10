@@ -29,11 +29,12 @@ const handelpage=(p)=>{
 
    
   const navigate = useNavigate();
-  const {counter,count}=useContext(Countcreate)
+  const {counter,count,addToBag}=useContext(Countcreate)
   const bag=[]
   const gotocart = (id) => {
-    bag.push(id)
-    setAdd(bag)
+  //  addToBag(id)
+    // console.log(id)
+    // setAdd(bag)
     counter(count+1)
     navigate(`/cart/${id}`)
   };
@@ -164,15 +165,15 @@ console.log(add+"Add")
           <div>
             <h4>{e.name}</h4>
             <p>Price:{e.price}</p>
-            <button
+           <Link to={`/cart/${e.id}`}><button
               onClick={ ()=>gotocart(e.id)}
                className='cartbtn'
             > Add to Cart
-            </button>
-            <button className="trashbtn" disabled={count<=0}>
+            </button></Link> 
+            {/* <button className="trashbtn" disabled={count<=0}>
               
                <img  onClick={handelremove} className="trash" src={del} alt="" />
-              </button>
+              </button> */}
           </div>
         </div>
       ))}

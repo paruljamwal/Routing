@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import price from '../assets/price.png'
+import { Countcreate } from '../Context/Counter'
 
 import '../Style.css'
 const Cart = () => {
 
     const {id} = useParams()
 
+    const  {bag}=useContext(Countcreate)
+  
     const [product,setProduct]=useState({})
 
     const [quantity,setQuantity]=useState(1)
@@ -32,15 +35,15 @@ const Cart = () => {
  }
 
  const handelremove=(id)=>{
-     product.filter((e)=>e.id===id)
+     product.filter((e)=>e.id!==id)
      setProduct("")
+    }
 //      product.filter((e)=>
 //      {
 //             e.id !==id
         
 //      })
    
-     }
      console.log(prices)
 
     const handelquantity=(p,product)=>{
@@ -58,6 +61,9 @@ const Cart = () => {
 
         <div>
             <h1>Shopping Cart</h1>
+            {/* {bag.map((product)=>(
+
+            ))} */}
             <p>You have  <span>{quantity}</span> items in your cart</p>
             <div className='cartitems'>
                 <div className='container'>
